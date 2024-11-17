@@ -1,0 +1,27 @@
+<h1>Welcome {{ user.username }}</h1>
+{% if user.role == 'admin' %}
+    <h2>All Grievances</h2>
+{% else %}
+    <h2>Your Grievances</h2>
+    <a href="{% url 'create_grievance' %}">Create New Grievance</a>
+{% endif %}
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for grievance in grievances %}
+        <tr>
+            <td>{{ grievance.title }}</td>
+            <td>{{ grievance.status }}</td>
+            <td>
+                <a href="{% url 'edit_grievance' grievance.id %}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

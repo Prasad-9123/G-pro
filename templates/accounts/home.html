@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Home Page</title>
+</head>
+<body>
+    <header style="text-align: left; font-size: 2em; font-weight: bold; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc;">GrievancePro</header>
+    <center><h1>Welcome to GrievancePro!</h1></center>
+    <div style="text-align: center; margin-top: 20px;">
+        <h4>Please create account </h4>
+        <a class="button" href="{% url 'register' %}">
+            <button>Register</button>
+        </a>
+        <br>
+        <h4>Please Login if already have account </h4>
+        <br>
+        <a class="button"  href="{% url 'login' %}">
+            <button>Log In</button>
+        </a>
+    </div>
+</body>
+</html>

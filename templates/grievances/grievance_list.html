@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Grievance List</title>
+</head>
+<body>
+    <header style="text-align: left; font-size: 2em; font-weight: bold; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc;">GrievancePro</header>
+    <h2 style="margin-left: 20px ">Grievances</h2>
+    <a class="button"  href="{% url 'submit_grievance' %}">Raise your Grievance</a>
+    <ul>
+        {% for grievance in grievances %}
+            <li>{{ grievance.title }} - {{ grievance.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
